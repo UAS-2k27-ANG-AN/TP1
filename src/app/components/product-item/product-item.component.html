@@ -1,0 +1,9 @@
+<button class="product-card" [class.selected]="isSelected" type="button" (click)="onSelect()">
+  <span class="product-visual" aria-hidden="true">✳</span>
+  <span class="product-information">
+    <span class="product-name">{{ product.name }}</span>
+    <span class="product-description">{{ product.description }}</span>
+    <span class="product-price">{{ product.price | currency:'EUR':'symbol':'1.2-2':'fr-FR' }}</span>
+  </span>
+  <span class="card-arrow" aria-hidden="true">↗</span>
+</button>

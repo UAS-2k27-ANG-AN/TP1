@@ -1,0 +1,77 @@
+﻿.detail {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin: 1.5rem 0 4rem;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid #e8e5dc;
+  border-radius: 0.45rem;
+  background: #f5f4ed;
+}
+
+.detail-icon {
+  display: grid;
+  width: 3.25rem;
+  height: 3.25rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 50%;
+  background: #e3e7dc;
+  color: #71836d;
+  font-size: 1.5rem;
+}
+
+.detail-copy {
+  flex: 1;
+}
+
+.detail-label {
+  margin: 0 0 0.3rem;
+  color: #8b755b;
+  font-size: 0.62rem;
+  font-weight: 750;
+  letter-spacing: 0.16em;
+}
+
+.detail h2 {
+  margin: 0;
+  color: #29382e;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.description {
+  margin: 0.25rem 0 0;
+  color: #747b72;
+  font-size: 0.82rem;
+}
+
+.detail-price {
+  margin: 0;
+  color: #425d49;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.detail-placeholder {
+  margin: 1.5rem 0 4rem;
+  padding: 1.3rem;
+  border: 1px dashed #dcd9ce;
+  border-radius: 0.45rem;
+  color: #858980;
+  font-size: 0.88rem;
+  text-align: center;
+}
+
+@media (max-width: 540px) {
+  .detail {
+    gap: 0.85rem;
+    padding: 1rem;
+  }
+
+  .detail-icon {
+    width: 2.6rem;
+    height: 2.6rem;
+  }
+}

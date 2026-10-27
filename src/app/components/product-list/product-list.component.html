@@ -1,0 +1,56 @@
+<main class="catalog">
+  <section class="intro" aria-labelledby="catalog-title">
+    <p class="eyebrow">LA SÉLECTION ATELIER</p>
+    <h1 id="catalog-title">Des essentiels,<br /><span>tout simplement.</span></h1>
+    <p class="intro-copy">
+      Découvrez notre sélection d'objets utiles et bien pensés pour accompagner
+      votre quotidien.
+    </p>
+  </section>
+
+  <section class="products-section" aria-labelledby="products-title">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">À DÉCOUVRIR</p>
+        <h2 id="products-title">Nos produits</h2>
+      </div>
+      <p class="product-count">{{ filteredProducts.length }} produit{{ filteredProducts.length > 1 ? 's' : '' }}</p>
+    </div>
+
+    <label class="search-field">
+      <span class="search-icon" aria-hidden="true">⌕</span>
+      <span class="visually-hidden">Rechercher un produit</span>
+      <input
+        type="search"
+        [(ngModel)]="searchTerm"
+        placeholder="Rechercher un produit..."
+        autocomplete="off"
+      />
+      @if (searchTerm) {
+        <button class="clear-search" type="button" (click)="searchTerm = ''" aria-label="Effacer la recherche">
+          ×
+        </button>
+      }
+    </label>
+
+    @if (filteredProducts.length > 0) {
+      <div class="list">
+        @for (product of filteredProducts; track product.id) {
+          <app-product-item
+            [product]="product"
+            [isSelected]="selectedProduct?.id === product.id"
+            (productSelected)="onProductSelected($event)"
+          ></app-product-item>
+        }
+      </div>
+    } @else {
+      <div class="empty-state" role="status">
+        <span aria-hidden="true">⌕</span>
+        <h3>Aucun produit trouvé</h3>
+        <p>Essayez avec un autre nom ou effacez votre recherche.</p>
+      </div>
+    }
+  </section>
+
+  <app-product-detail [product]="selectedProduct"></app-product-detail>
+</main>
